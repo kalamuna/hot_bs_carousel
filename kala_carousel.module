@@ -1,0 +1,27 @@
+<?php
+/**
+ * @file
+ * Kala-Carousel Module file
+ */
+
+/**
+ * Implementation of hook_entity_info_alter()
+ *
+ * Defines the field-able pane
+ */
+function kala_carousel_entity_info_alter(&$entity_info) {
+
+  // Fieldable panel pane bundle to support Bootstrap slideshows:
+  $entity_info['fieldable_panels_pane']['bundles']['kala_carousel'] = array(
+    'label' => t('Bootstrap Slideshow'),
+    'pane category' => t('Custom'),
+    'pane top level' => TRUE,
+    'admin' => array(
+      'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+      'bundle argument' => 4,
+      'real path' => 'admin/structure/fieldable-panels-panes/manage/kala-carousel',
+      'access arguments' => array('administer fieldable panels panes'),
+    ),
+  );
+
+}

@@ -1,0 +1,7 @@
+name = Kala-Carousel
+description = Go on a ride with me. Provides a fieldable panel for Bootstrap Carousels
+core = 7.x
+package = Kalamuna
+version = 7.x-1.0-alpha1
+project = kala_carousel
+features[features_api][] = api:2
