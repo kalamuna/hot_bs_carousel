@@ -52,7 +52,10 @@ function kala_carousel_field_default_field_instances() {
   $field_instances['field_collection_item-field_kala_carousel_slide-field_kala_carousel_slide_image'] = array(
     'bundle' => 'field_kala_carousel_slide',
     'deleted' => 0,
-    'description' => '',
+    'description' => '<div class="alert alert-info">
+<strong>Heads up!</strong>
+You\'re media will be scaled to 900px by 500px by default. Think about editing your image before uploading.
+</div>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -75,8 +78,8 @@ function kala_carousel_field_default_field_instances() {
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '6MB',
-      'max_resolution' => '300x300',
-      'min_resolution' => '',
+      'max_resolution' => '',
+      'min_resolution' => '900x500',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
@@ -97,10 +100,10 @@ function kala_carousel_field_default_field_instances() {
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 0,
-          'media_default--media_browser_my_files' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
           'media_internet' => 0,
-          'upload' => 0,
+          'upload' => 'upload',
           'youtube' => 0,
         ),
         'progress_indicator' => 'throbber',
@@ -115,7 +118,9 @@ function kala_carousel_field_default_field_instances() {
     'bundle' => 'field_kala_carousel_slide',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => '
+URLs are optional.
+',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -201,6 +206,13 @@ function kala_carousel_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('
+URLs are optional.
+');
+  t('<div class="alert alert-info">
+<strong>Heads up!</strong>
+You\'re media will be scaled to 900px by 500px by default. Think about editing your image before uploading.
+</div>');
   t('Slide');
   t('Slide Caption');
   t('Slide Image');
