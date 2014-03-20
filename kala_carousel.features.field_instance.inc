@@ -118,8 +118,7 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
     'bundle' => 'field_kala_carousel_slide',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '
-URLs are optional.
+    'description' => 'URLs are optional.
 ',
     'display' => array(
       'default' => array(
@@ -147,8 +146,8 @@ URLs are optional.
       ),
       'enable_tokens' => 1,
       'linkit' => array(
-        'enable' => 0,
-        'insert_plugin' => '',
+        'enable' => 1,
+        'insert_plugin' => 'raw_url',
       ),
       'rel_remove' => 'default',
       'title' => 'required',
@@ -206,9 +205,6 @@ URLs are optional.
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('
-URLs are optional.
-');
   t('<div class="alert alert-info">
 <strong>Heads up!</strong>
 You\'re media will be scaled to 900px by 500px by default. Think about editing your image before uploading.
@@ -217,6 +213,8 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
   t('Slide Caption');
   t('Slide Image');
   t('Slide Title');
+  t('URLs are optional.
+');
 
   return $field_instances;
 }
