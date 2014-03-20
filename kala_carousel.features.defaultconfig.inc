@@ -40,7 +40,7 @@ function kala_carousel_defaultconfig_field_default_fields() {
       'locked' => 0,
       'module' => 'field_collection',
       'settings' => array(
-        'hide_blank_items' => 0,
+        'hide_blank_items' => 1,
         'path' => '',
       ),
       'translatable' => 0,

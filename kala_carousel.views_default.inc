@@ -24,7 +24,11 @@ function kala_carousel_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '-1';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '21600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
@@ -61,6 +65,13 @@ function kala_carousel_views_default_views() {
     'image_style' => 'kala_carousel_image',
     'image_link' => '',
   );
+  /* Filter criterion: Filter invalid images */
+  $handler->display->display_options['filters']['field_kala_carousel_slide_image_width']['id'] = 'field_kala_carousel_slide_image_width';
+  $handler->display->display_options['filters']['field_kala_carousel_slide_image_width']['table'] = 'field_data_field_kala_carousel_slide_image';
+  $handler->display->display_options['filters']['field_kala_carousel_slide_image_width']['field'] = 'field_kala_carousel_slide_image_width';
+  $handler->display->display_options['filters']['field_kala_carousel_slide_image_width']['ui_name'] = 'Filter invalid images';
+  $handler->display->display_options['filters']['field_kala_carousel_slide_image_width']['operator'] = '>';
+  $handler->display->display_options['filters']['field_kala_carousel_slide_image_width']['value']['value'] = '0';
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');

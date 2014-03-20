@@ -26,7 +26,7 @@ function kala_carousel_field_default_field_bases() {
     'locked' => 0,
     'module' => 'field_collection',
     'settings' => array(
-      'hide_blank_items' => 0,
+      'hide_blank_items' => 1,
       'path' => '',
     ),
     'translatable' => 0,
