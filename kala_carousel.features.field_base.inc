@@ -60,13 +60,13 @@ function kala_carousel_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_kala_carousel_slide_media'
-  $field_bases['field_kala_carousel_slide_media'] = array(
+  // Exported field_base: 'field_kala_carousel_slide_image'
+  $field_bases['field_kala_carousel_slide_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_kala_carousel_slide_media',
+    'field_name' => 'field_kala_carousel_slide_image',
     'foreign keys' => array(
       'fid' => array(
         'columns' => array(
@@ -81,14 +81,13 @@ function kala_carousel_field_default_field_bases() {
       ),
     ),
     'locked' => 0,
-    'module' => 'file',
+    'module' => 'image',
     'settings' => array(
-      'display_default' => 0,
-      'display_field' => 0,
+      'default_image' => 0,
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,
-    'type' => 'file',
+    'type' => 'image',
   );
 
   // Exported field_base: 'field_kala_carousel_slide_title'

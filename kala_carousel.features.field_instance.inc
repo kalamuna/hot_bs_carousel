@@ -22,7 +22,7 @@ function kala_carousel_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -48,29 +48,36 @@ function kala_carousel_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_kala_carousel_slide-field_kala_carousel_slide_media'
-  $field_instances['field_collection_item-field_kala_carousel_slide-field_kala_carousel_slide_media'] = array(
+  // Exported field_instance: 'field_collection_item-field_kala_carousel_slide-field_kala_carousel_slide_image'
+  $field_instances['field_collection_item-field_kala_carousel_slide-field_kala_carousel_slide_image'] = array(
     'bundle' => 'field_kala_carousel_slide',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 2,
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'field_collection_item',
-    'field_name' => 'field_kala_carousel_slide_media',
-    'label' => 'Slide Media',
-    'required' => 0,
+    'field_name' => 'field_kala_carousel_slide_image',
+    'label' => 'Slide Image',
+    'required' => 1,
     'settings' => array(
-      'description_field' => 0,
-      'file_directory' => 'kala_carousel/media',
-      'file_extensions' => 'txt jpg jpeg webm png tiff',
-      'max_filesize' => '5MB',
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '6MB',
+      'max_resolution' => '300x300',
+      'min_resolution' => '',
+      'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -87,19 +94,19 @@ function kala_carousel_field_default_field_instances() {
           'audio' => 0,
           'document' => 0,
           'image' => 'image',
-          'video' => 'video',
+          'video' => 0,
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
-          'media_internet' => 'media_internet',
-          'upload' => 'upload',
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
           'youtube' => 0,
         ),
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 3,
+      'weight' => 0,
     ),
   );
 
@@ -115,7 +122,7 @@ function kala_carousel_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -196,7 +203,7 @@ function kala_carousel_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Slide');
   t('Slide Caption');
-  t('Slide Media');
+  t('Slide Image');
   t('Slide Title');
 
   return $field_instances;

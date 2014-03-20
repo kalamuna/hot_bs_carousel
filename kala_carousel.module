@@ -1,6 +1,12 @@
 <?php
 /**
  * @file
+ * Code for the Kala-Carousel feature.
+ */
+
+include_once 'kala_carousel.features.inc';
+/**
+ * @file
  * Kala-Carousel Module file
  */
 
