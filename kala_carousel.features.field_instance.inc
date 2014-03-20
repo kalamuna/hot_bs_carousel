@@ -191,7 +191,7 @@ URLs are optional.
     'entity_type' => 'fieldable_panels_pane',
     'field_name' => 'field_kala_carousel_slide',
     'label' => 'Slide',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),

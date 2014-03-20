@@ -13,7 +13,7 @@ function kala_carousel_field_default_field_bases() {
   // Exported field_base: 'field_kala_carousel_slide'
   $field_bases['field_kala_carousel_slide'] = array(
     'active' => 1,
-    'cardinality' => 10,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_kala_carousel_slide',
@@ -26,7 +26,7 @@ function kala_carousel_field_default_field_bases() {
     'locked' => 0,
     'module' => 'field_collection',
     'settings' => array(
-      'hide_blank_items' => 1,
+      'hide_blank_items' => 0,
       'path' => '',
     ),
     'translatable' => 0,
