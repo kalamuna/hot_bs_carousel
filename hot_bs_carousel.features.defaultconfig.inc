@@ -203,14 +203,14 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
     ),
   );
 
-  // Exported field: 'field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_slide_title'.
-  $fields['field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_slide_title'] = array(
+  // Exported field: 'field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_s_title'.
+  $fields['field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_s_title'] = array(
     'field_config' => array(
       'active' => 1,
       'cardinality' => 1,
       'deleted' => 0,
       'entity_types' => array(),
-      'field_name' => 'field_hot_bs_carousel_slide_title',
+      'field_name' => 'field_hot_bs_carousel_s_title',
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => 0,
@@ -249,7 +249,7 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
         ),
       ),
       'entity_type' => 'field_collection_item',
-      'field_name' => 'field_hot_bs_carousel_slide_title',
+      'field_name' => 'field_hot_bs_carousel_s_title',
       'label' => 'Slide Title',
       'required' => 0,
       'settings' => array(
