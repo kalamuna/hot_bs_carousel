@@ -49,8 +49,8 @@ function hot_bs_carousel_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_slide_image'
-  $field_instances['field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_slide_image'] = array(
+  // Exported field_instance: 'field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_s_img'
+  $field_instances['field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_s_img'] = array(
     'bundle' => 'field_hot_bs_carousel_slide',
     'deleted' => 0,
     'description' => '<div class="alert alert-info">
@@ -70,7 +70,7 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
       ),
     ),
     'entity_type' => 'field_collection_item',
-    'field_name' => 'field_hot_bs_carousel_slide_image',
+    'field_name' => 'field_hot_bs_carousel_s_img',
     'label' => 'Slide Image',
     'required' => 1,
     'settings' => array(

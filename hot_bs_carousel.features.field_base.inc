@@ -60,13 +60,13 @@ function hot_bs_carousel_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_hot_bs_carousel_slide_image'
-  $field_bases['field_hot_bs_carousel_slide_image'] = array(
+  // Exported field_base: 'field_hot_bs_carousel_s_img'
+  $field_bases['field_hot_bs_carousel_s_img'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_hot_bs_carousel_slide_image',
+    'field_name' => 'field_hot_bs_carousel_s_img',
     'foreign keys' => array(
       'fid' => array(
         'columns' => array(

@@ -38,7 +38,7 @@ function hot_bs_carousel_views_default_views() {
   $handler->display->display_options['style_options']['indicators'] = 1;
   $handler->display->display_options['style_options']['pause'] = 0;
   $handler->display->display_options['row_plugin'] = 'views_bootstrap_carousel_plugin_rows';
-  $handler->display->display_options['row_options']['image'] = 'field_hot_bs_carousel_slide_image';
+  $handler->display->display_options['row_options']['image'] = 'field_hot_bs_carousel_s_img';
   $handler->display->display_options['row_options']['title'] = 'field_hot_bs_carousel_slide_title';
   $handler->display->display_options['row_options']['description'] = 'field_hot_bs_carousel_slide_capt';
   /* Field: Field collection item: Field collection item ID */
@@ -55,23 +55,23 @@ function hot_bs_carousel_views_default_views() {
   $handler->display->display_options['fields']['field_hot_bs_carousel_slide_title']['field'] = 'field_hot_bs_carousel_slide_title';
   $handler->display->display_options['fields']['field_hot_bs_carousel_slide_title']['click_sort_column'] = 'url';
   /* Field: Field collection item: Slide Image */
-  $handler->display->display_options['fields']['field_hot_bs_carousel_slide_image']['id'] = 'field_hot_bs_carousel_slide_image';
-  $handler->display->display_options['fields']['field_hot_bs_carousel_slide_image']['table'] = 'field_data_field_hot_bs_carousel_slide_image';
-  $handler->display->display_options['fields']['field_hot_bs_carousel_slide_image']['field'] = 'field_hot_bs_carousel_slide_image';
-  $handler->display->display_options['fields']['field_hot_bs_carousel_slide_image']['label'] = '';
-  $handler->display->display_options['fields']['field_hot_bs_carousel_slide_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_hot_bs_carousel_slide_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_hot_bs_carousel_slide_image']['settings'] = array(
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_img']['id'] = 'field_hot_bs_carousel_s_img';
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_img']['table'] = 'field_data_field_hot_bs_carousel_s_img';
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_img']['field'] = 'field_hot_bs_carousel_s_img';
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_img']['label'] = '';
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_img']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_img']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_img']['settings'] = array(
     'image_style' => 'hot_bs_carousel_image',
     'image_link' => '',
   );
   /* Filter criterion: Filter invalid images */
-  $handler->display->display_options['filters']['field_hot_bs_carousel_slide_image_width']['id'] = 'field_hot_bs_carousel_slide_image_width';
-  $handler->display->display_options['filters']['field_hot_bs_carousel_slide_image_width']['table'] = 'field_data_field_hot_bs_carousel_slide_image';
-  $handler->display->display_options['filters']['field_hot_bs_carousel_slide_image_width']['field'] = 'field_hot_bs_carousel_slide_image_width';
-  $handler->display->display_options['filters']['field_hot_bs_carousel_slide_image_width']['ui_name'] = 'Filter invalid images';
-  $handler->display->display_options['filters']['field_hot_bs_carousel_slide_image_width']['operator'] = '>';
-  $handler->display->display_options['filters']['field_hot_bs_carousel_slide_image_width']['value']['value'] = '0';
+  $handler->display->display_options['filters']['field_hot_bs_carousel_s_img_width']['id'] = 'field_hot_bs_carousel_s_img_width';
+  $handler->display->display_options['filters']['field_hot_bs_carousel_s_img_width']['table'] = 'field_data_field_hot_bs_carousel_s_img';
+  $handler->display->display_options['filters']['field_hot_bs_carousel_s_img_width']['field'] = 'field_hot_bs_carousel_s_img_width';
+  $handler->display->display_options['filters']['field_hot_bs_carousel_s_img_width']['ui_name'] = 'Filter invalid images';
+  $handler->display->display_options['filters']['field_hot_bs_carousel_s_img_width']['operator'] = '>';
+  $handler->display->display_options['filters']['field_hot_bs_carousel_s_img_width']['value']['value'] = '0';
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
