@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * kala_carousel.features.inc
+ * hot_bs_carousel.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function kala_carousel_ctools_plugin_api($module = NULL, $api = NULL) {
+function hot_bs_carousel_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "panelizer" && $api == "panelizer") {
     return array("version" => "1");
   }
@@ -16,19 +16,19 @@ function kala_carousel_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function kala_carousel_views_api($module = NULL, $api = NULL) {
+function hot_bs_carousel_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_image_default_styles().
  */
-function kala_carousel_image_default_styles() {
+function hot_bs_carousel_image_default_styles() {
   $styles = array();
 
-  // Exported image style: kala_carousel_image.
-  $styles['kala_carousel_image'] = array(
-    'name' => 'kala_carousel_image',
+  // Exported image style: hot_bs_carousel_image.
+  $styles['hot_bs_carousel_image'] = array(
+    'name' => 'hot_bs_carousel_image',
     'label' => 'Kala Carousel Image (900x500)',
     'effects' => array(
       2 => array(

@@ -1,22 +1,22 @@
 <?php
 /**
  * @file
- * kala_carousel.panelizer.inc
+ * hot_bs_carousel.panelizer.inc
  */
 
 /**
  * Implements hook_panelizer_defaults().
  */
-function kala_carousel_panelizer_defaults() {
+function hot_bs_carousel_panelizer_defaults() {
   $export = array();
 
   $panelizer = new stdClass();
   $panelizer->disabled = FALSE; /* Edit this to true to make a default panelizer disabled initially */
   $panelizer->api_version = 1;
-  $panelizer->name = 'fieldable_panels_pane:kala_carousel:default:default';
+  $panelizer->name = 'fieldable_panels_pane:hot_bs_carousel:default:default';
   $panelizer->title = 'Default';
   $panelizer->panelizer_type = 'fieldable_panels_pane';
-  $panelizer->panelizer_key = 'kala_carousel';
+  $panelizer->panelizer_key = 'hot_bs_carousel';
   $panelizer->no_blocks = FALSE;
   $panelizer->css_id = '';
   $panelizer->css = '';
@@ -24,9 +24,9 @@ function kala_carousel_panelizer_defaults() {
   $panelizer->contexts = array();
   $panelizer->relationships = array(
     0 => array(
-      'identifier' => 'Slide field collection (field_kala_carousel_slide) from fieldable_panels_pane (kala_carousel)',
+      'identifier' => 'Slide field collection (field_hot_bs_carousel_slide) from fieldable_panels_pane (hot_bs_carousel)',
       'keyword' => 'Field collection',
-      'name' => 'field_collection_from_field:fieldable_panels_pane:kala_carousel:field_kala_carousel_slide',
+      'name' => 'field_collection_from_field:fieldable_panels_pane:hot_bs_carousel:field_hot_bs_carousel_slide',
       'delta' => '0',
       'context' => 'panelizer',
       'id' => 1,
@@ -56,7 +56,7 @@ function kala_carousel_panelizer_defaults() {
     $pane->pid = 'new-364a6f0f-e15d-4718-93fe-eb9f612aff2c';
     $pane->panel = 'center';
     $pane->type = 'views_panes';
-    $pane->subtype = 'kala_carousel-panel_pane_1';
+    $pane->subtype = 'hot_bs_carousel-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -78,7 +78,7 @@ function kala_carousel_panelizer_defaults() {
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-364a6f0f-e15d-4718-93fe-eb9f612aff2c';
   $panelizer->display = $display;
-  $export['fieldable_panels_pane:kala_carousel:default:default'] = $panelizer;
+  $export['fieldable_panels_pane:hot_bs_carousel:default:default'] = $panelizer;
 
   return $export;
 }
