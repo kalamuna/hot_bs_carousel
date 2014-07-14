@@ -41,9 +41,9 @@ function hot_bs_carousel_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => 900,
+          'width' => '',
           'height' => 500,
-          'upscale' => 0,
+          'upscale' => 1,
         ),
         'weight' => 1,
       ),
@@ -65,9 +65,9 @@ function hot_bs_carousel_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => 1200,
+          'width' => '',
           'height' => 666,
-          'upscale' => 0,
+          'upscale' => 1,
         ),
         'weight' => 1,
       ),
