@@ -1,56 +1,18 @@
 <?php
 /**
  * @file
- * kala_carousel.features.field_instance.inc
+ * hot_bs_carousel.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function kala_carousel_field_default_field_instances() {
+function hot_bs_carousel_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_kala_carousel_slide-field_kala_carousel_slide_capt'
-  $field_instances['field_collection_item-field_kala_carousel_slide-field_kala_carousel_slide_capt'] = array(
-    'bundle' => 'field_kala_carousel_slide',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_kala_carousel_slide_capt',
-    'label' => 'Slide Caption',
-    'required' => 0,
-    'settings' => array(
-      'linkit' => array(
-        'enable' => 0,
-        'insert_plugin' => '',
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 3,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_kala_carousel_slide-field_kala_carousel_slide_image'
-  $field_instances['field_collection_item-field_kala_carousel_slide-field_kala_carousel_slide_image'] = array(
-    'bundle' => 'field_kala_carousel_slide',
+  // Exported field_instance: 'field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_s_img'
+  $field_instances['field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_s_img'] = array(
+    'bundle' => 'field_hot_bs_carousel_slide',
     'deleted' => 0,
     'description' => '<div class="alert alert-info">
 <strong>Heads up!</strong>
@@ -69,11 +31,15 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
       ),
     ),
     'entity_type' => 'field_collection_item',
-    'field_name' => 'field_kala_carousel_slide_image',
+    'field_name' => 'field_hot_bs_carousel_s_img',
     'label' => 'Slide Image',
     'required' => 1,
     'settings' => array(
       'alt_field' => 0,
+      'alt_field_default' => '',
+      'alt_field_hide' => 0,
+      'alt_field_sync_title' => 0,
+      'alt_field_update_on_edit' => 0,
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -81,6 +47,9 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
       'max_resolution' => '',
       'min_resolution' => '900x500',
       'title_field' => 0,
+      'title_field_default' => '',
+      'title_field_hide' => 0,
+      'title_field_update_on_edit' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -106,6 +75,18 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
           'upload' => 'upload',
           'youtube' => 0,
         ),
+        'manualcrop_crop_info' => TRUE,
+        'manualcrop_default_crop_area' => TRUE,
+        'manualcrop_enable' => FALSE,
+        'manualcrop_inline_crop' => FALSE,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => TRUE,
+        'manualcrop_keyboard' => TRUE,
+        'manualcrop_maximize_default_crop_area' => FALSE,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => FALSE,
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
@@ -113,9 +94,9 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_kala_carousel_slide-field_kala_carousel_slide_title'
-  $field_instances['field_collection_item-field_kala_carousel_slide-field_kala_carousel_slide_title'] = array(
-    'bundle' => 'field_kala_carousel_slide',
+  // Exported field_instance: 'field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_s_title'
+  $field_instances['field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_s_title'] = array(
+    'bundle' => 'field_hot_bs_carousel_slide',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'URLs are optional.
@@ -130,7 +111,7 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
       ),
     ),
     'entity_type' => 'field_collection_item',
-    'field_name' => 'field_kala_carousel_slide_title',
+    'field_name' => 'field_hot_bs_carousel_s_title',
     'label' => 'Slide Title',
     'required' => 0,
     'settings' => array(
@@ -166,9 +147,48 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
     ),
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-kala_carousel-field_kala_carousel_slide'
-  $field_instances['fieldable_panels_pane-kala_carousel-field_kala_carousel_slide'] = array(
-    'bundle' => 'kala_carousel',
+  // Exported field_instance: 'field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_slide_capt'
+  $field_instances['field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_slide_capt'] = array(
+    'bundle' => 'field_hot_bs_carousel_slide',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_hot_bs_carousel_slide_capt',
+    'label' => 'Slide Caption',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 3,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'fieldable_panels_pane-hot_bs_carousel-field_hot_bs_carousel_slide'
+  $field_instances['fieldable_panels_pane-hot_bs_carousel-field_hot_bs_carousel_slide'] = array(
+    'bundle' => 'hot_bs_carousel',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -186,9 +206,35 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
         'type' => 'field_collection_view',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 0,
+      ),
+      'promo' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'fieldable_panels_pane',
-    'field_name' => 'field_kala_carousel_slide',
+    'field_name' => 'field_hot_bs_carousel_slide',
     'label' => 'Slide',
     'required' => 1,
     'settings' => array(
