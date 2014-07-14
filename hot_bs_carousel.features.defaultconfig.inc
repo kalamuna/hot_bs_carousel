@@ -23,72 +23,6 @@ function hot_bs_carousel_defaultconfig_features() {
 function hot_bs_carousel_defaultconfig_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_slide_capt'.
-  $fields['field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_slide_capt'] = array(
-    'field_config' => array(
-      'active' => 1,
-      'cardinality' => 1,
-      'deleted' => 0,
-      'entity_types' => array(),
-      'field_name' => 'field_hot_bs_carousel_slide_capt',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => 0,
-      'module' => 'text',
-      'settings' => array(),
-      'translatable' => 0,
-      'type' => 'text_long',
-    ),
-    'field_instance' => array(
-      'bundle' => 'field_hot_bs_carousel_slide',
-      'default_value' => NULL,
-      'deleted' => 0,
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 2,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'field_collection_item',
-      'field_name' => 'field_hot_bs_carousel_slide_capt',
-      'label' => 'Slide Caption',
-      'required' => 0,
-      'settings' => array(
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
-        'text_processing' => 1,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'rows' => 3,
-        ),
-        'type' => 'text_textarea',
-        'weight' => 2,
-      ),
-    ),
-  );
-
   // Exported field: 'field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_s_img'.
   $fields['field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_s_img'] = array(
     'field_config' => array(
@@ -282,6 +216,72 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
         'settings' => array(),
         'type' => 'link_field',
         'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported field: 'field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_slide_capt'.
+  $fields['field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_slide_capt'] = array(
+    'field_config' => array(
+      'active' => 1,
+      'cardinality' => 1,
+      'deleted' => 0,
+      'entity_types' => array(),
+      'field_name' => 'field_hot_bs_carousel_slide_capt',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => 0,
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => 0,
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'field_hot_bs_carousel_slide',
+      'default_value' => NULL,
+      'deleted' => 0,
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 2,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'field_collection_item',
+      'field_name' => 'field_hot_bs_carousel_slide_capt',
+      'label' => 'Slide Caption',
+      'required' => 0,
+      'settings' => array(
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
+        'text_processing' => 1,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => 3,
+        ),
+        'type' => 'text_textarea',
+        'weight' => 2,
       ),
     ),
   );

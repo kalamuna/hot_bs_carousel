@@ -73,8 +73,8 @@ function hot_bs_carousel_views_default_views() {
   $handler->display->display_options['filters']['field_hot_bs_carousel_s_img_width']['operator'] = '>';
   $handler->display->display_options['filters']['field_hot_bs_carousel_s_img_width']['value']['value'] = '0';
 
-  /* Display: Content pane */
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  /* Display: Content Area (9 Column Width) */
+  $handler = $view->new_display('panel_pane', 'Content Area (9 Column Width)', 'panel_pane_1');
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
@@ -85,6 +85,9 @@ function hot_bs_carousel_views_default_views() {
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['link_to_view'] = '0';
+
+  /* Display: Promo - Full width bootstrap slideshows */
+  $handler = $view->new_display('panel_pane', 'Promo - Full width bootstrap slideshows', 'hot_bs_carousel_promo');
   $export['hot_bs_carousel'] = $view;
 
   return $export;

@@ -10,45 +10,6 @@
 function hot_bs_carousel_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_slide_capt'
-  $field_instances['field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_slide_capt'] = array(
-    'bundle' => 'field_hot_bs_carousel_slide',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_hot_bs_carousel_slide_capt',
-    'label' => 'Slide Caption',
-    'required' => 0,
-    'settings' => array(
-      'linkit' => array(
-        'enable' => 0,
-        'insert_plugin' => '',
-      ),
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 3,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 2,
-    ),
-  );
-
   // Exported field_instance: 'field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_s_img'
   $field_instances['field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_s_img'] = array(
     'bundle' => 'field_hot_bs_carousel_slide',
@@ -183,6 +144,45 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
       'settings' => array(),
       'type' => 'link_field',
       'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_slide_capt'
+  $field_instances['field_collection_item-field_hot_bs_carousel_slide-field_hot_bs_carousel_slide_capt'] = array(
+    'bundle' => 'field_hot_bs_carousel_slide',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_hot_bs_carousel_slide_capt',
+    'label' => 'Slide Caption',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 3,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
     ),
   );
 
