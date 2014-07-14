@@ -328,6 +328,32 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
           'type' => 'field_collection_view',
           'weight' => 0,
         ),
+        'full' => array(
+          'label' => 'above',
+          'module' => 'field_collection',
+          'settings' => array(
+            'add' => 'Add',
+            'delete' => 'Delete',
+            'description' => TRUE,
+            'edit' => 'Edit',
+            'view_mode' => 'full',
+          ),
+          'type' => 'field_collection_view',
+          'weight' => 0,
+        ),
+        'promo' => array(
+          'label' => 'above',
+          'module' => 'field_collection',
+          'settings' => array(
+            'add' => 'Add',
+            'delete' => 'Delete',
+            'description' => TRUE,
+            'edit' => 'Edit',
+            'view_mode' => 'full',
+          ),
+          'type' => 'field_collection_view',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'fieldable_panels_pane',
       'field_name' => 'field_hot_bs_carousel_slide',
@@ -373,14 +399,42 @@ function hot_bs_carousel_defaultconfig_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_fieldable_panels_pane__hot_bs_carousel';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'promo' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
           'weight' => '-5',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'title' => array(
+          'default' => array(
+            'weight' => '-5',
+            'visible' => TRUE,
+          ),
+          'full' => array(
+            'weight' => '-5',
+            'visible' => TRUE,
+          ),
+          'promo' => array(
+            'weight' => '-5',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_fieldable_panels_pane__hot_bs_carousel'] = $strongarm;
