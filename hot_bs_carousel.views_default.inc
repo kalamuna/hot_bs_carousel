@@ -88,6 +88,31 @@ function hot_bs_carousel_views_default_views() {
 
   /* Display: Promo - Full width bootstrap slideshows */
   $handler = $view->new_display('panel_pane', 'Promo - Full width bootstrap slideshows', 'hot_bs_carousel_promo');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field collection item: Field collection item ID */
+  $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['table'] = 'field_collection_item';
+  $handler->display->display_options['fields']['item_id']['field'] = 'item_id';
+  /* Field: Field collection item: Slide Caption */
+  $handler->display->display_options['fields']['field_hot_bs_carousel_slide_capt']['id'] = 'field_hot_bs_carousel_slide_capt';
+  $handler->display->display_options['fields']['field_hot_bs_carousel_slide_capt']['table'] = 'field_data_field_hot_bs_carousel_slide_capt';
+  $handler->display->display_options['fields']['field_hot_bs_carousel_slide_capt']['field'] = 'field_hot_bs_carousel_slide_capt';
+  /* Field: Field collection item: Slide Title */
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_title']['id'] = 'field_hot_bs_carousel_s_title';
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_title']['table'] = 'field_data_field_hot_bs_carousel_s_title';
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_title']['field'] = 'field_hot_bs_carousel_s_title';
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_title']['click_sort_column'] = 'url';
+  /* Field: Field collection item: Slide Image */
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_img']['id'] = 'field_hot_bs_carousel_s_img';
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_img']['table'] = 'field_data_field_hot_bs_carousel_s_img';
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_img']['field'] = 'field_hot_bs_carousel_s_img';
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_img']['label'] = '';
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_img']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_img']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_hot_bs_carousel_s_img']['settings'] = array(
+    'image_style' => 'hot_bs_carousel_image_promo',
+    'image_link' => '',
+  );
   $export['hot_bs_carousel'] = $view;
 
   return $export;

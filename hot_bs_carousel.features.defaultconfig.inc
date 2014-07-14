@@ -471,6 +471,11 @@ function hot_bs_carousel_defaultconfig_strongarm() {
         'default' => 1,
         'choice' => 0,
       ),
+      'promo' => array(
+        'status' => 1,
+        'default' => 1,
+        'choice' => 0,
+      ),
     ),
   );
   $export['panelizer_defaults_fieldable_panels_pane_hot_bs_carousel'] = $strongarm;
