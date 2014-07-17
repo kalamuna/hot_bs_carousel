@@ -38,11 +38,15 @@ function hot_bs_carousel_theme() {
       'template' => 'templates/carousel-controls',
       'type' => 'module',
     ),
-    'arousel_indicators' => array(
+    'carousel_indicators' => array(
       'template' => 'templates/carousel-indicators',
       'variables' => array('items' => NULL),
       'type' => 'module',
     ),
+    'fieldable_panels_pane__hot_bs_carousel' => array(
+      'template' => 'templates/fieldable-panels-pane--hot-bs-carousel',
+      'preprocess functions' => array('')
+    )
   );
   return $theme;
 }
@@ -69,4 +73,15 @@ function hot_bs_carousel_entity_info_alter(&$entity_info) {
       'access arguments' => array('administer fieldable panels panes'),
     ),
   );
+}
+
+
+
+/**
+* Implements hook_preprocess_panels_pane().
+*/
+function hot_bs_carousel_preprocess_fieldable_panels_pane(&$vars){
+  $carousel = theme('carousel', array());
+
+  $vars['fields'] = $carousel;
 }
