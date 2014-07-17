@@ -10,6 +10,45 @@ include_once 'hot_bs_carousel.features.inc';
  * hot-bs-carousel Module file
  */
 
+
+/**
+ * Implements hook_theme().
+ */
+function hot_bs_carousel_theme() {
+  $theme = array(
+    'carousel' => array(
+      'variables' => array(
+        'slides' => NULL,
+        'controls' => NULL,
+        'indicators' =>  NULL
+      ),
+      'template' => 'templates/carousel',
+      'type' => 'module'
+    ),
+    'carousel_slide' => array(
+      'variables' => array(
+        'image' => NULL,
+        'title' => NULL,
+        'caption' => NULL
+      ),
+      'template' => 'templates/carousel-slide',
+      'type' => 'module',
+    ),
+    'carousel_controls' => array(
+      'template' => 'templates/carousel-controls',
+      'type' => 'module',
+    ),
+    'arousel_indicators' => array(
+      'template' => 'templates/carousel-indicators',
+      'variables' => array('items' => NULL),
+      'type' => 'module',
+    ),
+  );
+  return $theme;
+}
+
+
+
 /**
  * Implements hook_entity_info_alter().
  *
@@ -30,14 +69,4 @@ function hot_bs_carousel_entity_info_alter(&$entity_info) {
       'access arguments' => array('administer fieldable panels panes'),
     ),
   );
-
-}
-
-
-/**
- * Implements themplate_preprocess_views_bootstrap_carousel_plugin_style().
- */
-function hot_bs_carousel_preprocess_views_bootstrap_carousel_plugin_style(&$vars) {
-  // Add touch events.
-  drupal_add_js(drupal_get_path('module', 'hot_bs_carousel') . '/hot_bs_carousel.min.js');
 }
