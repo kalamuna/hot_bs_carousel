@@ -76,6 +76,16 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
+            'image_style' => 'hot_bs_carousel_image',
+          ),
+          'type' => 'image',
+          'weight' => 0,
+        ),
+        'full_width' => array(
+          'label' => 'above',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => '',
             'image_style' => 'hot_bs_carousel_image_promo',
           ),
           'type' => 'image',
@@ -198,6 +208,13 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
           'type' => 'link_default',
           'weight' => 1,
         ),
+        'full_width' => array(
+          'label' => 'above',
+          'module' => 'link',
+          'settings' => array(),
+          'type' => 'link_default',
+          'weight' => 1,
+        ),
       ),
       'entity_type' => 'field_collection_item',
       'field_name' => 'field_hot_bs_carousel_s_title',
@@ -278,6 +295,13 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
           'weight' => 2,
         ),
         'full' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 2,
+        ),
+        'full_width' => array(
           'label' => 'above',
           'module' => 'text',
           'settings' => array(),
@@ -371,9 +395,9 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
           'settings' => array(
             'add' => 'Add',
             'delete' => 'Delete',
-            'description' => TRUE,
+            'description' => 1,
             'edit' => 'Edit',
-            'view_mode' => 'full',
+            'view_mode' => 'full_width',
           ),
           'type' => 'field_collection_view',
           'weight' => 0,
@@ -477,6 +501,9 @@ function hot_bs_carousel_defaultconfig_strongarm() {
       ),
       'diff_standard' => array(
         'custom_settings' => FALSE,
+      ),
+      'full_width' => array(
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(
