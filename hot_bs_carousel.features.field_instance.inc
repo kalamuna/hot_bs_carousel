@@ -24,7 +24,17 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'hot_bs_carousel_image',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'hot_bs_carousel_image_promo',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -109,6 +119,13 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
         'type' => 'link_default',
         'weight' => 1,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 1,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_hot_bs_carousel_s_title',
@@ -155,6 +172,13 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'full' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
