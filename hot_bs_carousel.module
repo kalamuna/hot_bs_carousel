@@ -79,6 +79,16 @@ function hot_bs_carousel_entity_info_alter(&$entity_info) {
  * Implements hook_preprocess_panels_pane().
  */
 function hot_bs_carousel_preprocess_fieldable_panels_pane(&$vars) {
+  if(isset($vars['elements']['#bundle']) && $vars['elements']['#bundle'] === 'hot_bs_carousel') {
+    $vars['fields'] = _hot_bs_carousel_handle_view($vars);
+  }
+}
+
+/**
+ * Heloer function to theme out the carousel contents.
+ */
+function _hot_bs_carousel_handle_view(array $vars){
+  $carousel = '';
   $slides = array();
   $field_hot_bs_carousel_slide = $vars['elements']['field_hot_bs_carousel_slide'];
   $count = 0;
@@ -100,6 +110,6 @@ function hot_bs_carousel_preprocess_fieldable_panels_pane(&$vars) {
 
   drupal_add_js(drupal_get_path('module','hot_bs_carousel') . '/hot_bs_carousel.min.js');
   $carousel = theme('carousel', array('slides' => $slides));
-
-  $vars['fields'] = $carousel;
+  
+  return $carousel;
 }
