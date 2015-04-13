@@ -5,10 +5,53 @@
  */
 
 include_once 'hot_bs_carousel.features.inc';
+
 /**
- * @file
- * hot-bs-carousel Module file
+ * Implements hook_theme().
  */
+function hot_bs_carousel_theme() {
+  $theme = array(
+    'carousel' => array(
+      'variables' => array(
+        'slides' => NULL,
+      ),
+      'template' => 'templates/carousel',
+      'type' => 'module',
+    ),
+    'carousel_slide' => array(
+      'variables' => array(
+        'image' => NULL,
+        'title' => NULL,
+        'caption' => NULL,
+        'active' => FALSE,
+      ),
+      'template' => 'templates/carousel-slide',
+      'type' => 'module',
+    ),
+    'carousel_indicators' => array(
+      'template' => 'templates/carousel-indicators',
+      'variables' => array(
+        'items' => NULL,
+        'target' => NULL,
+      ),
+      'type' => 'module',
+    ),
+    'carousel_controls' => array(
+      'template'  => 'templates/carousel-controls',
+      'variables' => array('target' => NULL),
+    ),
+    'fieldable_panels_pane__hot_bs_carousel' => array(
+      'template' => 'templates/fieldable-panels-pane--hot-bs-carousel',
+    ),
+  );
+  return $theme;
+}
+/**
+ * Implements templates_process_carousel().
+ */
+function template_process_carousel(&$variables) {
+  $variables['id_string'] = 'hotBsCarousel' . $variables['id'];
+}
 
 /**
  * Implements hook_entity_info_alter().
@@ -30,14 +73,43 @@ function hot_bs_carousel_entity_info_alter(&$entity_info) {
       'access arguments' => array('administer fieldable panels panes'),
     ),
   );
-
 }
 
+/**
+ * Implements hook_preprocess_panels_pane().
+ */
+function hot_bs_carousel_preprocess_fieldable_panels_pane(&$vars) {
+  if(isset($vars['elements']['#bundle']) && $vars['elements']['#bundle'] === 'hot_bs_carousel') {
+    $vars['fields'] = _hot_bs_carousel_handle_view($vars);
+  }
+}
 
 /**
- * Implements themplate_preprocess_views_bootstrap_carousel_plugin_style().
+ * Heloer function to theme out the carousel contents.
  */
-function hot_bs_carousel_preprocess_views_bootstrap_carousel_plugin_style(&$vars) {
-  // Add touch events.
-  drupal_add_js(drupal_get_path('module', 'hot_bs_carousel') . '/hot_bs_carousel.min.js');
+function _hot_bs_carousel_handle_view(array $vars){
+  $carousel = '';
+  $slides = array();
+  $field_hot_bs_carousel_slide = $vars['elements']['field_hot_bs_carousel_slide'];
+  $count = 0;
+  foreach ($field_hot_bs_carousel_slide as $key => $item) {
+    if (is_numeric($key)) {
+      foreach ($item['entity']['field_collection_item'] as $k => $i) {
+        $active = $count < 1 ? TRUE : FALSE;
+        $slides[$key] = array(
+          '#theme' => 'carousel_slide',
+          '#title' => render($i['field_hot_bs_carousel_s_title'][0]),
+          '#caption' => render($i['field_hot_bs_carousel_slide_capt'][0]),
+          '#image' => render($i['field_hot_bs_carousel_s_img'][0]),
+          '#active' => $active,
+        );
+        $count++;
+      }
+    }
+  }
+
+  drupal_add_js(drupal_get_path('module','hot_bs_carousel') . '/hot_bs_carousel.min.js');
+  $carousel = theme('carousel', array('slides' => $slides));
+  
+  return $carousel;
 }
