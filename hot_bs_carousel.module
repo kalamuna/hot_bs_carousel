@@ -85,31 +85,50 @@ function hot_bs_carousel_preprocess_fieldable_panels_pane(&$vars) {
 }
 
 /**
- * Heloer function to theme out the carousel contents.
+ * Helper function to theme out the carousel contents.
  */
 function _hot_bs_carousel_handle_view(array $vars){
   $carousel = '';
   $slides = array();
   $field_hot_bs_carousel_slide = $vars['elements']['field_hot_bs_carousel_slide'];
   $count = 0;
+  
   foreach ($field_hot_bs_carousel_slide as $key => $item) {
     if (is_numeric($key)) {
       foreach ($item['entity']['field_collection_item'] as $k => $i) {
         $active = $count < 1 ? TRUE : FALSE;
+        $url = $i['field_hot_bs_carousel_s_title'][0]['#element']['url'];
+        $image = $i['field_hot_bs_carousel_s_img'][0];
+        
+        // Wrap the image in a a link if we have a url.
+        if (!empty($url)) {
+          // theme_link is slower than l() but far more customizable. After all
+          // slideshows don't usually have more than a handful of slides.
+          $image = array(
+            '#theme' => 'link',
+            '#text' => render($image),
+            '#path' => $url,
+            '#options' => array(
+              'html' => TRUE,
+              'attributes' => array(),
+            ),
+          );
+        }
+        
         $slides[$key] = array(
           '#theme' => 'carousel_slide',
-          '#title' => render($i['field_hot_bs_carousel_s_title'][0]),
-          '#caption' => render($i['field_hot_bs_carousel_slide_capt'][0]),
-          '#image' => render($i['field_hot_bs_carousel_s_img'][0]),
+          '#title' => $i['field_hot_bs_carousel_s_title'][0],
+          '#caption' => $i['field_hot_bs_carousel_slide_capt'][0],
+          '#image' => $image,
           '#active' => $active,
         );
         $count++;
       }
     }
   }
-
-  drupal_add_js(drupal_get_path('module','hot_bs_carousel') . '/hot_bs_carousel.min.js');
-  $carousel = theme('carousel', array('slides' => $slides));
   
-  return $carousel;
+  $path = drupal_get_path('module','hot_bs_carousel');
+  drupal_add_js($path . '/hot_bs_carousel.min.js');
+
+  return theme('carousel', array('slides' => $slides));
 }
