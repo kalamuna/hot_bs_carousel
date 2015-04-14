@@ -1,8 +1,5 @@
-<div class="<?php print $classes ?> slide" id="<?php print $variables['id_string']; ?>" data-ride="carousel">
-  <?php print theme('carousel_indicators', array(
-    'items' => count($slides),
-    'target' => $variables['id_string'],
-  )); ?>
+<div <?php print drupal_attributes($variables['attributes_array']); ?>>
+  <?php print render($carousel_indicators); ?>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
@@ -12,5 +9,5 @@
   </div>
 
   <!-- Controls -->
-  <?php print theme('carousel_controls',array('target'=> $variables['id_string'])); ?>
+  <?php print render($carousel_controls); ?>
 </div>
