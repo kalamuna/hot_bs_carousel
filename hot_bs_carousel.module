@@ -20,6 +20,8 @@ function hot_bs_carousel_theme() {
     ),
     'carousel_slide' => array(
       'variables' => array(
+        'fc_id' => NULL, // The id of the field collection.
+        'fpp_id' => NULL, // The id of the FPP the carousel is appearing on.
         'image' => NULL,
         'title' => NULL,
         'caption' => NULL,
@@ -130,31 +132,17 @@ function _hot_bs_carousel_get_slides($vars){
   $slides = array();
   $field_hot_bs_carousel_slide = $vars['elements']['field_hot_bs_carousel_slide'];
   $count = 0;
-  
+
   foreach ($field_hot_bs_carousel_slide as $key => $item) {
     if (is_numeric($key)) {
       foreach ($item['entity']['field_collection_item'] as $k => $i) {
         $active = $count < 1 ? TRUE : FALSE;
-        $url = $i['field_hot_bs_carousel_s_title'][0]['#element']['url'];
         $image = $i['field_hot_bs_carousel_s_img'][0];
-        
-        // Wrap the image in a a link if we have a url.
-        if (!empty($url)) {
-          // theme_link is slower than l() but far more customizable. After all
-          // slideshows don't usually have more than a handful of slides.
-          $image = array(
-            '#theme' => 'link',
-            '#text' => render($image),
-            '#path' => $url,
-            '#options' => array(
-              'html' => TRUE,
-              'attributes' => array(),
-            ),
-          );
-        }
-        
+        $image['#path'] = $i['field_hot_bs_carousel_s_title'][0]['#element']['url'];        
         $slides[$key] = array(
           '#theme' => 'carousel_slide',
+          '#fc_id' => $i['#entity']->item_id, // The id of the field collection.
+          '#fpp_id' => $vars['elements']['#element']->fpid, // The id of the field collection.
           '#title' => $i['field_hot_bs_carousel_s_title'][0],
           '#caption' => $i['field_hot_bs_carousel_slide_capt'][0],
           '#image' => $image,
