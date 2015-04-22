@@ -63,22 +63,40 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'image',
+          'module' => 'picture',
           'settings' => array(
+            'colorbox_settings' => array(
+              'colorbox_caption' => 'auto',
+              'colorbox_caption_custom' => '',
+              'colorbox_gallery' => 'post',
+              'colorbox_gallery_custom' => '',
+              'colorbox_group' => '',
+              'colorbox_multivalue_index' => NULL,
+            ),
+            'fallback_image_style' => 'large',
             'image_link' => '',
-            'image_style' => 'hot_bs_carousel_image',
+            'picture_mapping' => 'bs_picture_map',
           ),
-          'type' => 'image',
+          'type' => 'picture',
           'weight' => 0,
         ),
         'full' => array(
           'label' => 'above',
-          'module' => 'image',
+          'module' => 'picture',
           'settings' => array(
+            'colorbox_settings' => array(
+              'colorbox_caption' => 'auto',
+              'colorbox_caption_custom' => '',
+              'colorbox_gallery' => 'post',
+              'colorbox_gallery_custom' => '',
+              'colorbox_group' => '',
+              'colorbox_multivalue_index' => NULL,
+            ),
+            'fallback_image_style' => '',
             'image_link' => '',
-            'image_style' => 'hot_bs_carousel_image',
+            'picture_mapping' => 'kalapicture_jumbotron',
           ),
-          'type' => 'image',
+          'type' => 'picture',
           'weight' => 0,
         ),
         'full_width' => array(
@@ -116,7 +134,7 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'media',
+        'module' => 'image',
         'settings' => array(
           'allowed_schemes' => array(
             'private' => 'private',
@@ -149,9 +167,10 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
           'manualcrop_styles_list' => array(),
           'manualcrop_styles_mode' => 'include',
           'manualcrop_thumblist' => FALSE,
+          'preview_image_style' => 'thumbnail',
           'progress_indicator' => 'throbber',
         ),
-        'type' => 'media_generic',
+        'type' => 'image_image',
         'weight' => 0,
       ),
     ),
@@ -221,6 +240,7 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
       'label' => 'Slide Title',
       'required' => 0,
       'settings' => array(
+        'absolute_url' => 1,
         'attributes' => array(
           'class' => '',
           'configurable_title' => 0,
@@ -233,11 +253,13 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
         ),
         'enable_tokens' => 1,
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 1,
-          'insert_plugin' => 'raw_url',
+          'profile' => NULL,
         ),
         'rel_remove' => 'default',
         'title' => 'required',
+        'title_label_use_field_label' => FALSE,
         'title_maxlength' => 128,
         'title_value' => '',
         'url' => 'optional',
@@ -316,8 +338,9 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
       'required' => 0,
       'settings' => array(
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 0,
-          'insert_plugin' => '',
+          'profile' => '',
         ),
         'text_processing' => 1,
         'user_register_form' => FALSE,
@@ -367,13 +390,15 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
           'label' => 'above',
           'module' => 'field_collection',
           'settings' => array(
-            'add' => 'Add',
-            'delete' => 'Delete',
-            'description' => TRUE,
-            'edit' => 'Edit',
             'view_mode' => 'full',
           ),
-          'type' => 'field_collection_view',
+          'type' => 'field_collection_fields',
+          'weight' => 0,
+        ),
+        'featured' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => 0,
         ),
         'full' => array(
@@ -415,7 +440,7 @@ You\'re media will be scaled to 900px by 500px by default. Think about editing y
         'module' => 'field_collection',
         'settings' => array(),
         'type' => 'field_collection_embed',
-        'weight' => -4,
+        'weight' => 2,
       ),
     ),
   );
@@ -460,11 +485,14 @@ function hot_bs_carousel_defaultconfig_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'preview' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '1',
         ),
       ),
       'display' => array(
